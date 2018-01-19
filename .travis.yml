@@ -6,7 +6,12 @@ jobs:
   include:
     - stage: build
       script:
-      - echo "dummy login"
-      if: branch =~ ^[0-9]
+      - echo "build stage"
+      - echo "build stage" > test
     - stage: test
-      script: echo "testing"
+      script:
+      - echo "test stage"
+      - cat test
+    - stage: mergetodev
+      script: echo "merging"
+      if: branch =~ ^[0-9]
