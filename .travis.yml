@@ -1,9 +1,12 @@
 sudo: true
 dist: trusty
+notifications:
+  email: false
 jobs:
   include:
-    - stage: build docker image
+    - stage: build
       script:
       - echo "dummy login"
+      if: branch =~ ^[0-9]
     - stage: test
       script: echo "testing"
