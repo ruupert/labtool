@@ -8,16 +8,22 @@ jobs:
       script:
       - echo "build stage"
       - echo "tehdään testit"
+      after_success:
+      - echo "suksessss"
       if: branch =~ ^[0-9]
     - stage: development
       script:
       - echo "dev build stage"
       - echo "tehdään testit"
       - echo "tehdään development ympäristön kontti ja pushataan dockerhubiin"
+      after_success:
+      - echo "suksessss"
       if: branch = dev
     - stage: master
       script:
       - echo "master build stage"
       - echo "ajetaan testit"
+      after_success:
+      - echo "suksessss"
       - echo "tehdään master ympäristön kontti ja pushataan dockerhubiin"
       if: branch = master
