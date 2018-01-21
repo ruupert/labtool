@@ -6,8 +6,9 @@ node_js:
 notifications:
   email: false
 before_install:
-  - "npm config set spin false"
-  - "npm install -g npm"
+  - cd labtool 2.0
+  - npm config set spin false
+  - npm install -g npm
 install:
   - npm install
 jobs:
