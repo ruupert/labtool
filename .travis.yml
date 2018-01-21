@@ -1,13 +1,20 @@
 sudo: true
 dist: trusty
+language: node_js
+node_js:
+  - "8"
 notifications:
   email: false
+before_install:
+  - "npm config set spin false"
+  - "npm install -g npm"
+install:
+  - npm install
 jobs:
   include:
     - stage: build feature
       script:
       - cd labtool2.0
-      - npm install -g
       - npm test
       after_success:
       - echo "suksessss"
@@ -15,7 +22,6 @@ jobs:
     - stage: development
       script:
       - cd labtool2.0
-      - npm install -g
       - npm test
       after_success:
       - echo "suksessss"
@@ -24,7 +30,6 @@ jobs:
     - stage: master
       script:
       - cd labtool2.0
-      - npm install -g
       - npm test
       after_success:
       - echo "suksessss"
