@@ -6,7 +6,7 @@ node_js:
 notifications:
   email: false
 before_install:
-  - cd labtool 2.0
+  - cd labtool2.0
   - npm config set spin false
   - npm install -g npm
 install:
